@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-->HelloWorld<!-->
+    <servlet>
+        <servlet-name>HelloWorld</servlet-name>
+        <servlet-class>HelloWorld</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/HelloWorld</url-pattern>
+    </servlet-mapping>
+
+    <!-->DisplayHeader<!-->
+    <servlet>
+        <!-- 类名 -->
+        <servlet-name>DisplayHeader</servlet-name>
+        <!-- 所在的包 -->
+        <servlet-class>DisplayHeader</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayHeader</servlet-name>
+        <!-- 访问的网址 -->
+        <url-pattern>/DisplayHeader</url-pattern>
+    </servlet-mapping>
+
+    <!-->InitServlet<!-->
+    <servlet>
+        <servlet-name>InitServlet</servlet-name>
+        <servlet-class>InitServlet</servlet-class>
+        <init-param>
+            <param-name>firstName</param-name>
+            <param-value>Lancaster</param-value>
+        </init-param>
+        <init-param>
+            <param-name>emailAddress</param-name>
+            <param-value>123456@qq.com</param-value>
+        </init-param>
+        <!-->服务器启动时加载<!-->
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/InitServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-->InitPage.jsp<!-->
+    <servlet>
+        <servlet-name>Initpage</servlet-name>
+        <jsp-file>/InitPage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Initpage</servlet-name>
+        <url-pattern>/Initpage.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>InitPage.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <servlet>
+        <servlet-name>HelloWorld1</servlet-name>
+        <servlet-class>HelloWorld1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorld1</servlet-name>
+        <url-pattern>/HelloWorld1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloWorld3</servlet-name>
+        <servlet-class>HelloWorld3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorld3</servlet-name>
+        <url-pattern>/HelloWorld3</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LotteryNumbers</servlet-name>
+        <servlet-class>LotteryNumbers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LotteryNumbers</servlet-name>
+        <url-pattern>/Lottery</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ThreeParams</servlet-name>
+        <servlet-class>Sevlet004.ThreeParams</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ThreeParams</servlet-name>
+        <url-pattern>/ThreeParams</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowRequestHeaders</servlet-name>
+        <servlet-class>Servlet005.ShowRequestHeaders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowRequestHeaders</servlet-name>
+        <url-pattern>/ShowRequestHeaders</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>Servlet005.Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/BrowserInsult</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WrongDestination</servlet-name>
+        <servlet-class>Servlet006.WrongDestination</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WrongDestination</servlet-name>
+        <url-pattern>/Wrong</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RepeatVisitor</servlet-name>
+        <servlet-class>Servlet008.RepeatVisitor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RepeatVisitor</servlet-name>
+        <url-pattern>/RepeatVisitor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ThreeParameters</servlet-name>
+        <jsp-file>/ThreeParameters.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ThreeParameters</servlet-name>
+        <url-pattern>/ThreeParameters.jsp</url-pattern>
+    </servlet-mapping>
+
+
+    <!-->一个javaweb项目<!-->
+    <!-->Filter,解决中文编码<!-->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>LogSign.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>DeletServlet</servlet-name>
+        <servlet-class>LogSign.servlet.DeletServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletServlet</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LogSign.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchAll</servlet-name>
+        <servlet-class>LogSign.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchAll</servlet-name>
+        <url-pattern>/SearchUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SignServlet</servlet-name>
+        <servlet-class>LogSign.servlet.SignServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignServlet</servlet-name>
+        <url-pattern>/Sign</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>LogSign.servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/Update</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
