@@ -18,6 +18,6 @@
 
 <body>
     ${xiaoxi}<br>
-    <a href="SearchUser">查看所有用户</a>
+    <a href="/JavaWeb2/SearchUser">查看所有用户</a>
 </body>
 </html>

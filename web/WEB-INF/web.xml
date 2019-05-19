@@ -175,7 +175,7 @@
     
     <servlet>
         <servlet-name>SearchAll</servlet-name>
-        <servlet-class>LogSign.servlet.LoginServlet</servlet-class>
+        <servlet-class>LogSign.servlet.SearchAll</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SearchAll</servlet-name>

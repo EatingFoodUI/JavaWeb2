@@ -14,7 +14,7 @@ public class User {
     }
 
     public void setId(int id){
-        this.id = this.id;
+        this.id = id;
     }
 
     public String getName(){
@@ -22,7 +22,7 @@ public class User {
     }
 
     public void setName(String name){
-        this.name = this.name;
+        this.name = name;
     }
 
     public String getPwd(){
@@ -30,7 +30,7 @@ public class User {
     }
 
     public void setPwd(String pwd){
-        this.pwd = this.pwd;
+        this.pwd = pwd;
     }
 
     public String getSex(){
@@ -38,7 +38,7 @@ public class User {
     }
 
     public void setSex(String sex){
-        this.sex = this.sex;
+        this.sex = sex;
     }
 
     public String getHome(){
@@ -46,7 +46,7 @@ public class User {
     }
 
     public void setHome(String home){
-        this.home = this.home;
+        this.home = home;
     }
 
     public String getInfo(){
@@ -54,6 +54,6 @@ public class User {
     }
 
     public void setInfo(String info){
-        this.info = this.info;
+        this.info = info;
     }
 }

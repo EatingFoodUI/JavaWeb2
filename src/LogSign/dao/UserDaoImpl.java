@@ -14,7 +14,12 @@ public class UserDaoImpl implements  UserDao {
         boolean flag = false;
         try {
             DBconn.init();
-            ResultSet rs = DBconn.selectSql("select * from user where name=`" + name +"` and pwd=`" + pwd + "`");
+            if(name==null||pwd==null) {
+                return flag;
+            }
+            String sql = "select * from user where name='" + name +"' and pwd='" + pwd + "'";
+            System.out.println(sql);
+            ResultSet rs = DBconn.selectSql("select * from user where name='" + name +"' and pwd='" + pwd + "'");
             while(rs.next()){
                 if(rs.getString("name").equals(name))
                 {
@@ -35,8 +40,12 @@ public class UserDaoImpl implements  UserDao {
     public boolean register(User user) {
         boolean flag = false;
         DBconn.init();
+        if(user.getName()==null||user.getPwd()==null)
+        {
+            return flag;
+        }
         int i = DBconn.addUpdDel("insert into user(name, pwd, sex, home, info) " +
-                "values(`" + user.getName() +"`,`" + user.getPwd() + "`,`" + user.getSex() + "`,`" + user.getHome()  + "`,`" + user.getInfo() + ")");
+                "values('" + user.getName() +"','" + user.getPwd() + "','" + user.getSex() + "','" + user.getHome()  + "','" + user.getInfo() + "')");
         if(i>0){
             flag = true;
         }

@@ -34,7 +34,7 @@ public class SignServlet extends HttpServlet {
         if(ud.register(user))
         {
             request.setAttribute("username", name);
-            request.getRequestDispatcher("/denglu.jsp").forward(request,response);
+            request.getRequestDispatcher("/login.jsp").forward(request,response);
         }
         else
         {
