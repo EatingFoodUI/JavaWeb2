@@ -10,7 +10,7 @@ public class JDBCtest {
 
     // JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/javaweb";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/javaweb?useUnicode=true&characterEncoding=utf8";
 
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
@@ -32,13 +32,18 @@ public class JDBCtest {
             stmt = conn.createStatement();
             String sql;
             sql = "SELECT * FROM javaweb.user";
-            ResultSet rs = stmt.executeQuery(sql);
+            String Seletsql = "select * from user where name ='林格' and pwd='46123'";
+            String Seletsql1 = "select * from user where name='mikeli' and pwd='4612378'";
+            String Seletsql2 = "select * from user";
 
-            // 展开结果集数据库
-            while(rs.next()){
+            ResultSet rs = stmt.executeQuery(Seletsql1);
+            ResultSet rs1 = stmt.executeQuery(Seletsql2);
+
+            // "select * from user where name=`" + name +"` and pwd=`" + pwd + "`"展开结果集数据库
+            while(rs1.next()){
                 // 通过字段检索
-                int id  = rs.getInt("id");
-                String name = rs.getString("name");
+                int id  = rs1.getInt("id");
+                String name = rs1.getString("name");
 
                 // 输出数据
                 System.out.print("ID: " + id);
@@ -46,7 +51,7 @@ public class JDBCtest {
                 System.out.print("\n");
             }
             // 完成后关闭
-            rs.close();
+            rs1.close();
             stmt.close();
             conn.close();
         }catch(SQLException se){

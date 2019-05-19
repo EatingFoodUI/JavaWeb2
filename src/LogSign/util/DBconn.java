@@ -4,7 +4,7 @@ import java.sql.*;
 
 
 public class DBconn {
-    static String url = "jdbc:mysql://localhost:3306/javaweb";
+    static String url = "jdbc:mysql://localhost:3306/javaweb?useUnicode=true&characterEncoding=utf8";
     static String username = "root";
     static String password = "4612378";
     static Connection conn = null;
